@@ -433,6 +433,7 @@ static unsigned int mse_to_quality(double mse)
 }
 
 #include <unistd.h>
+#include <getopt.h>
 
 #if defined(WIN32) || defined(__WIN32__)
 #include <fcntl.h>
@@ -440,6 +441,9 @@ static unsigned int mse_to_quality(double mse)
 #else
 #define setmode(what,ever)
 #endif
+
+extern char *optarg;
+extern int optind, opterr;
 
 int main(int argc, char *argv[])
 {
